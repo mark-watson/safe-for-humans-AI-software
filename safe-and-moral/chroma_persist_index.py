@@ -1,3 +1,5 @@
+# Copyright 2023 Mark Watson. All rights reserved.
+
 from langchain.vectorstores import Chroma
 from langchain.embeddings.openai import OpenAIEmbeddings
 
