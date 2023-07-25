@@ -16,9 +16,9 @@ def get_help(thing_to_do):
     context = " ".join(list(map(lambda x: x.page_content.replace("\n",""), results)))
     prompt=f"Given the context:\n{context}\n\nPlease give me moral advice and guidance for {thing_to_do}?"
   
-    print(f"\n{prompt}:")
-    return llm(prompt)
+    #print(f"\n{prompt}:")
+    return llm(prompt), context
 
-print(get_help("I want to be fair to my friend"))
-print(get_help("My business partner is stealing from me"))
-
+if __name__ == "__main__":
+    print(get_help("I want to be fair to my friend")[0])
+    print(get_help("My business partner is stealing from me")[0])
