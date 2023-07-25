@@ -14,7 +14,7 @@ vectorstore = Chroma(collection_name="langchain_store",
 def get_help(thing_to_do):
     results = vectorstore.similarity_search(thing_to_do, k=3)
     context = " ".join(list(map(lambda x: x.page_content.replace("\n",""), results)))
-    prompt=f"Given the context:\n{context}\n\nPlease give me moral advice and guidance for {thing_to_do}?"
+    prompt=f"Given the context:\n{context}\n\nPlease give (as one long paragraph) me moral advice and guidance for {thing_to_do}?"
   
     #print(f"\n{prompt}:")
     return llm(prompt), context
